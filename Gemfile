@@ -27,6 +27,10 @@ gem 'redis-rails'
 gem 'vkontakte_api', '~> 1.4'
 gem 'hashie'
 
+gem 'capistrano', '~> 3.1'
+gem 'capistrano-rvm'
+gem 'capistrano-rails', '~> 1.1'
+
 # gem 'paperclip'
 
 group :development, :test do
@@ -35,7 +39,3 @@ group :development, :test do
   gem 'rails_best_practices'
 end
 
-group :development do
-  gem 'capistrano', '~> 3.1'
-  gem 'capistrano-rails', '~> 1.1'
-end
