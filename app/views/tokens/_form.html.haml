@@ -2,10 +2,8 @@
   .row
     .col-md-6
       = f.input :name
-      = error_span(@token[:name])
   .row
     .col-md-12
       = f.input :token
-      = error_span(@token[:token])
   = f.button :submit, :class => 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), tokens_path, :class => 'btn btn-default'
