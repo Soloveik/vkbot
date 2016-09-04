@@ -2,9 +2,24 @@ class ManagersController < ApplicationController
   require "hashie"
 
   def index
-    # @vk = VkontakteApi::Client.new(Token.first.token)
-    # # @vk.token = Token.first.token
-    # data = @vk.users.get.first.to_hash
-    # @data = data.inspect
+  
   end
+
+  def mytest1
+    "mytest1"
+  end
+
+  def mytest2
+    "mytest2"
+  end
+
+  def collect_themes
+    
+  end
+
+  def count_messege
+    
+  end
+
+
 end

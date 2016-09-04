@@ -1,0 +1,9 @@
+= simple_form_for @theme, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :gid
+  = f.error_span :gid
+  = f.input :tid
+  = f.error_span :tid
+  = f.input :theme
+  = f.error_span :theme
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), themes_path, :class => 'btn btn-default'
