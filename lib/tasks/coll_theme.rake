@@ -1,7 +1,7 @@
     task :coll_theme, [:param] => :environment do |task, args| 
 
       @vk = VkontakteApi::Client.new(Token.first.token)
-      data = @vk.groups.search(q: "игра", count: 1000)
+      data = @vk.groups.search(q: "игра", count: 1000, sort: 2)
       data = data.map{|e| e.to_hash["gid"] if e != data[0]}.compact
       data.each do |id|
         begin

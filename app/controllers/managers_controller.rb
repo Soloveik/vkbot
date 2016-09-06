@@ -2,7 +2,7 @@ class ManagersController < ApplicationController
   require "hashie"
 
   def index
-  
+    
   end
 
   def mytest1
