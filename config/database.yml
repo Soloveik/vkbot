@@ -6,20 +6,20 @@ production:
   username: nerrey_vkbot41
   password: tSOHg2xG
 
-development:
-  adapter: postgresql
-  encoding: unicode
-  host: postgresql7.locum.ru
-  database: nerrey_vkbot41
-  username: nerrey_vkbot41
-  password: tSOHg2xG
 # development:
 #   adapter: postgresql
 #   encoding: unicode
-#   host: localhost
-#   database: vkbot
-#   username: ns
-#   password: 14156
+#   host: postgresql7.locum.ru
+#   database: nerrey_vkbot41
+#   username: nerrey_vkbot41
+#   password: tSOHg2xG
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: vkbot_db
+  username: ns
+  password: 14156
 
 test:
   adapter: postgresql

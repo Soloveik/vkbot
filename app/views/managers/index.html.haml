@@ -1,12 +1,17 @@
 .container
-  %br
-  =@data
-  %br
-  
-%br
-%br
-%br
-.container
   .row
-    = link_to "Старт", manager_path, :class => 'btn btn-primary'
-    
+    - @bots.each do |bot|
+      .col-md-3
+        = render "thumbnail", bot: bot
+  = render "modal"
+  %br
+  .container
+    .row
+      = link_to "Создать", new_bot_path, remote: true, :class => 'btn btn-primary'
+      / = link_to "create_themes", "#", :class => 'btn btn-primary'
+      / %br
+      / %br
+      / = link_to "delete_un_topics", "#", :class => 'btn btn-primary'
+      / %br
+      / %br
+      / = link_to "Send_message", "#", :class => 'btn btn-primary'

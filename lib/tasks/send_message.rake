@@ -1,4 +1,4 @@
-task :mytest, [:param] => :environment do |task, args| 
+task :send_message, [:param] => :environment do |task, args| 
   
   @vk = VkontakteApi::Client.new(Token.first.token)
   

@@ -1,4 +1,4 @@
-task :co_messege, [:param] => :environment do |task, args|
+task :delete_unpopulare_topics, [:param] => :environment do |task, args|
   @vk = VkontakteApi::Client.new(Token.first.token)
   Theme.all.each do |theme|
     begin

@@ -1,0 +1,17 @@
+.thumbnail
+  = image_tag(bot.photo)
+  .caption
+    %h3 
+      =link_to bot.first_name + " " + bot.last_name, "http://vk.com/id#{bot.uid}"
+    %p
+      Друзья: 
+      =bot.friends
+    %p
+      Подписчики: 
+      =bot.followers
+    %p
+      Заявки: 
+      =bot.requests
+    %p
+      %a.btn.btn-primary{:href => "#", :role => "button"} Button
+      %a.btn.btn-default{:href => "#", :role => "button"} Button

@@ -1,4 +1,4 @@
-    task :coll_theme, [:param] => :environment do |task, args| 
+    task :create_themes_by_groups, [:param] => :environment do |task, args| 
 
       @vk = VkontakteApi::Client.new(Token.first.token)
       data = @vk.groups.search(q: "игра", count: 1000, sort: 2)

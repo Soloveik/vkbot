@@ -10,22 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904120830) do
+ActiveRecord::Schema.define(version: 20160907144441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bots", force: :cascade do |t|
+    t.string   "uid"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "photo"
+    t.integer  "friends"
+    t.integer  "followers"
+    t.string   "token"
+    t.boolean  "active",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "requests"
+  end
 
   create_table "themes", force: :cascade do |t|
     t.string   "gid"
     t.string   "tid"
     t.string   "theme"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tokens", force: :cascade do |t|
-    t.string   "name"
-    t.string   "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
