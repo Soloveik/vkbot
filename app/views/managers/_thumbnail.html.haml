@@ -3,15 +3,20 @@
   .caption
     %h3 
       =link_to bot.first_name + " " + bot.last_name, "http://vk.com/id#{bot.uid}"
+      = image_tag("/gray.png", size: "25", id: "ava#{bot.id}")
     %p
       Друзья: 
-      =bot.friends
+      %span{id: "fri#{bot.id}"}
+        =bot.friends
     %p
-      Подписчики: 
-      =bot.followers
+      Подписчики:
+      %span{id: "foll#{bot.id}"}
+        =bot.followers
     %p
       Заявки: 
-      =bot.requests
+      %span{id: "req#{bot.id}"}
+        =bot.requests
     %p
-      %a.btn.btn-primary{:href => "#", :role => "button"} Button
-      %a.btn.btn-default{:href => "#", :role => "button"} Button
+      / %a.btn.btn-default{:href => bot_activation_path, :role => "button", "data-remote" => true} Активировать
+      =link_to "Активировать", bot_activation_path(tok: bot.token), class: "btn btn-default", remote: true
+      =link_to "Токен", edit_bot_path(id: bot.id), class: "btn btn-default", remote: true

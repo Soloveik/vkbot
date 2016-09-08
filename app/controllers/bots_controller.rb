@@ -17,6 +17,7 @@ class BotsController < ApplicationController
 
   # GET /bots/1/edit
   def edit
+    
   end
 
   # POST /bots
@@ -38,7 +39,8 @@ class BotsController < ApplicationController
               requests: requests}
 
       @bot = Bot.new(info)
-      if @bot.save
+      if Bot.where(uid: info[:uid]).count == 0
+        @bot.save
         redirect_to root_path
       else
         redirect_to root_path
@@ -52,9 +54,9 @@ class BotsController < ApplicationController
   # PATCH/PUT /bots/1
   def update
     if @bot.update(bot_params)
-      redirect_to @bot, notice: 'Bot was successfully updated.'
+      redirect_to root_path, notice: 'Токен успешно обнавлен.'
     else
-      render :edit
+      redirect_to root_path, notice: 'Токен не был обнавлен.'
     end
   end
 

@@ -1,0 +1,9 @@
+<% if @bot.nil? %>
+    // alert("измените токен");
+<% else %>
+  $("#foll<%= @bot.id %>").html("<%= @bot.followers %>");
+  $("#fri<%= @bot.id %>").html("<%= @bot.friends %>");
+  $("#req<%= @bot.id %>").html("<%= @bot.requests %>");
+  // alert("обновлено");
+<% end %>
+$("#ava<%= @bot.id %>").attr("src", "<%= @ind %>");
