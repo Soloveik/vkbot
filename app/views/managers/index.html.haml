@@ -1,17 +1,17 @@
 .container
   .row
-    - @bots.each do |bot|
-      .col-md-3
-        = render "thumbnail", bot: bot
+    .col-xs-12.col-md-9
+      -@bots.each do |bot|
+        .col-md-4
+          = render "thumbnail", bot: bot
   = render "modal"
   %br
   .container
     .row
       = link_to "Создать", new_bot_path, remote: true, :class => 'btn btn-primary'
-      / = link_to "create_themes", "#", :class => 'btn btn-primary'
-      / %br
-      / %br
-      / = link_to "delete_un_topics", "#", :class => 'btn btn-primary'
-      / %br
-      / %br
-      / = link_to "Send_message", "#", :class => 'btn btn-primary'
+      = link_to "проверка", test_1_path, remote: true, :class => 'btn btn-primary'
+      %br
+      %br
+      %br
+:css
+  .countdown { float: left; width: 100%; }

@@ -4,6 +4,8 @@
   $("#foll<%= @bot.id %>").html("<%= @bot.followers %>");
   $("#fri<%= @bot.id %>").html("<%= @bot.friends %>");
   $("#req<%= @bot.id %>").html("<%= @bot.requests %>");
+  $("#tim<%= @bot.id %>").html("<%= @bot.token_expired %>");
+
   // alert("обновлено");
 <% end %>
 $("#ava<%= @bot.id %>").attr("src", "<%= @ind %>");

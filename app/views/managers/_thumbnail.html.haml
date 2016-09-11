@@ -16,7 +16,27 @@
       Заявки: 
       %span{id: "req#{bot.id}"}
         =bot.requests
+    %p  
+      Время до обновления: 
+      %br
+      %span.countdown{id: "tim#{bot.id}"}
+        =bot.token_expired
+    %br
+    %br
     %p
       / %a.btn.btn-default{:href => bot_activation_path, :role => "button", "data-remote" => true} Активировать
       =link_to "Активировать", bot_activation_path(tok: bot.token), class: "btn btn-default", remote: true
       =link_to "Токен", edit_bot_path(id: bot.id), class: "btn btn-default", remote: true
+      %br
+      = link_to "Поиск групп", create_themes_by_groups_path(id: bot.id), :class => 'btn btn-primary'
+      %br
+      = link_to "Сортировка групп", delete_unpopulare_topics_path(id: bot.id), :class => 'btn btn-primary'
+      %br
+      = link_to "Отправление сообщений", send_message_path(id: bot.id), :class => 'btn btn-primary'
+      %br
+      = link_to "Добавить в друзья", to_accept_requests_path(id: bot.id), :class => 'btn btn-primary'
+:javascript
+  var newYear = new Date(#{bot.token_expired.to_f * 1000}); 
+  $("#tim#{bot.id}").countdown({until: newYear, format: "HMS"}); 
+   
+  

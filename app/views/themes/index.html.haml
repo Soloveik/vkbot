@@ -11,9 +11,9 @@
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
-    - @themes.each do |theme|
+    - @themes.each_with_index do |theme, ind|
       %tr
-        %td= link_to theme.id, theme_path(theme)
+        %td= ind + 1
         %td= theme.gid
         %td= theme.tid
         %td= theme.theme

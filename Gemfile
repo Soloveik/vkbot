@@ -10,6 +10,7 @@ gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-countdown-rails'
 gem "haml-rails"
 gem "twitter-bootstrap-rails"
 

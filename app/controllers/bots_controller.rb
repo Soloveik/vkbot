@@ -36,7 +36,8 @@ class BotsController < ApplicationController
               followers: name["followers_count"],
               token: token,
               active: false, 
-              requests: requests}
+              requests: requests, 
+              token_expired: Time.now + 23 * 3600}
 
       @bot = Bot.new(info)
       if Bot.where(uid: info[:uid]).count == 0
@@ -53,10 +54,12 @@ class BotsController < ApplicationController
 
   # PATCH/PUT /bots/1
   def update
-    if @bot.update(bot_params)
-      redirect_to root_path, notice: 'Токен успешно обнавлен.'
+    hash_params = {token_expired: Time.now + 23 * 3600}
+    hash_params[:token] = bot_params[:token]
+    if @bot.update(hash_params)
+      redirect_to root_path, notice: 'Токен успешно обновлен.'
     else
-      redirect_to root_path, notice: 'Токен не был обнавлен.'
+      redirect_to root_path, notice: 'Токен не был обновлен.'
     end
   end
 
@@ -74,6 +77,6 @@ class BotsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def bot_params
-      params.require(:bot).permit(:uid, :first_name, :last_name, :photo, :friends, :followers, :token, :active, :requests)
+      params.require(:bot).permit(:uid, :first_name, :last_name, :photo, :friends, :followers, :token, :active, :requests, :token_expired)
     end
 end
